@@ -9,6 +9,7 @@ import java.util.HashMap;
 public class ReactTestComponent extends Panel {
 
     private int counter = 0;
+    private User user = null;
 
     public ReactTestComponent(String id) {
         super(id);
@@ -16,7 +17,10 @@ public class ReactTestComponent extends Panel {
         ReactComponentPanel reactpanel = new ReactComponentPanel("react", "Header", createState());
 
         reactpanel.addCallback("increment", Void.class, (target, ignore) -> counter++);
-        reactpanel.addCallback("brukerdata", User.class, (target, brukerdata) -> System.out.println(brukerdata));
+        reactpanel.addCallback("userdata", User.class, (target, user) -> {
+            this.user = user;
+            reactpanel.setState(createState());
+        });
 
         AjaxLink serverlink = new AjaxLink("server") {
             @Override
@@ -38,6 +42,7 @@ public class ReactTestComponent extends Panel {
         return new HashMap<String, Object>() {{
             put("header", "From wicket");
             put("counter", counter);
+            put("wicketdata", user);
         }};
     }
 }

@@ -6,7 +6,10 @@ var Header = React.createClass({
         getDefaultProps: function () {
             return {
                 header: 'This headers',
-                counter: 0
+                counter: 0,
+                wicketdata: {
+                    text: ''
+                }
             };
         },
         increment: function () {
@@ -15,14 +18,20 @@ var Header = React.createClass({
             });
             this.sendToWicket("increment");
         },
-        senddata: function(){
-            this.sendToWicket("brukerdata", {username: 'admin', text: 'min melding'});
+        senddata: function () {
+            this.sendToWicket("userdata", {
+                username: 'admin',
+                text: 'message sent from react, to wicket server and then back again...'
+            });
         },
         render: function () {
+            var wicketmessage = this.state.wicketdata ? this.state.wicketdata.text : '';
+
             return (
                 <div>
                     <h1>{this.state.header} - {this.state.counter}</h1>
-                    <button onClick={this.senddata}>Mer data</button>
+                    <button onClick={this.senddata}>Send til wicket</button>
+                    <p>{wicketmessage}</p>
                 </div>
             );
         }
