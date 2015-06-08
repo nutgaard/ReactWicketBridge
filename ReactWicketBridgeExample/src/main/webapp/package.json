@@ -1,0 +1,28 @@
+{
+  "name": "ReactComponentPanel",
+  "version": "0.0.1",
+  "description": "A Wicket-React Communication Bridge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Apache",
+    "Wicket",
+    "Facebook",
+    "React"
+  ],
+  "author": "Nicklas Utgaard",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^10.2.4",
+    "gulp": "^3.9.0",
+    "gulp-notify": "^2.2.0",
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.2.2"
+  },
+  "dependencies": {
+    "react": "^0.13.3"
+  }
+}

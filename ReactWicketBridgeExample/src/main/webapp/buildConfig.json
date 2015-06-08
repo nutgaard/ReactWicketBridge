@@ -1,0 +1,14 @@
+{
+  "srcPath": "./src/",
+  "distPath": "./dist",
+  "namespace": {
+    "base": "",
+    "components": ""
+  },
+  "components": [
+    "fluxin",
+    "list",
+    "layout",
+    "layoutFlux"
+  ]
+}
